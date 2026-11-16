@@ -1,0 +1,29 @@
+# .gitignore for {{PROJECT_NAME}}
+#
+# --- Workflow files: committed or kept local? -----------------------------
+# DEFAULT: COMMITTED. CLAUDE.md, STATE.md, docs/, journal/ and
+# .claude/commands/ are tracked, so a fresh clone has them and "git clean"
+# cannot delete them.
+# If the remote is public and the planning notes must stay private,
+# uncomment the five lines below. Then never run "git clean -fd" in this
+# repo, and change the last bullet of CLAUDE.md section 9 in the same edit.
+# The choice is recorded here; no other file may contradict it.
+#CLAUDE.md
+#STATE.md
+#docs/
+#journal/
+#.claude/commands/
+
+# --- Always local ---------------------------------------------------------
+# Per-machine tool approvals. Never shared.
+.claude/settings.local.json
+
+# --- Secrets --------------------------------------------------------------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# --- Dependencies, build output, caches -----------------------------------
+# > FILL: the dependency, build-output and cache directories of {{STACK}}, one pattern per line.
